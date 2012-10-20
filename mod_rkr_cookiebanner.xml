@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="2.5"
+	client="site"
+	method="upgrade">
+	<name>RKR Cookie Banner</name>
+	<author>Rene Kreijveld</author>
+	<creationDate>July 2012</creationDate>
+	<copyright>Copyright (C) ReneKreijveld.nl All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later</license>
+	<authorEmail>email@renekreijveld.nl</authorEmail>
+	<authorUrl>www.renekreijveld.nl</authorUrl>
+	<version>0.1.1</version>
+	<description>Module to add cookie control banner.</description>
+	<files>
+		<filename module="mod_rkr_cookiebanner">mod_rkr_cookiebanner.php</filename>
+		<folder>assets</folder>
+		<folder>tmpl</folder>
+		<filename>index.html</filename>
+		<filename>mod_rkr_cookiebanner.xml</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="cbPos"
+					type="radio"
+					default="atbottom"
+					label="Banner positie" 
+					description="De positie van de banner op het website.">
+					<option value="attop">Boven</option>
+					<option value="atbottom">Beneden</option>
+				</field>
+				<field
+					name="cbColor"
+					type="list"
+					default="cb lightgray"
+					label="Kleur" 
+					description="De kleur van de banner op het website.">
+					<option value="cb lightgray">Lichtgrijs</option>
+					<option value="cb blue">Blauw</option>
+					<option value="cb bluegray">Blauwgrijs</option>
+					<option value="cb green">Groen</option>
+					<option value="cb orange">Lichtoranje</option>
+					<option value="cb red">Rood</option>
+					<option value="cb antraciet">Antraciet</option>
+				</field>
+				<field
+					name="cbText"
+					type="textarea"
+					filter="raw"
+					cols="40"
+					rows="7"
+					default="Deze website maakt gebruik van cookies. Lees ons &lt;a href='#'&gt;privacy statement&lt;/a&gt; voor meer informatie. Gaat u akkoord met het gebruik hiervan?"
+					label="Banner tekst"
+					description="Geef hier de tekst die in de banner moet verschijnen." 
+				/>
+				<field
+					name="cbAccept" 
+					type="text" 
+					default="Ja, ik ga akkoord"
+					label="Akkoordknop tekst"
+					description="De tekst die verschijnt op de akkoordknop."
+				/>
+				<field
+					name="cbAcceptColor"
+					type="list"
+					default="cb blue"
+					label="Akkoordknop kleur" 
+					description="De kleur van de akkoordknop op de website.">
+					<option value="cb lightgray">Lichtgrijs</option>
+					<option value="cb blue">Blauw</option>
+					<option value="cb bluegray">Lichtblauw</option>
+					<option value="cb green">Groen</option>
+					<option value="cb orange">Lichtoranje</option>
+					<option value="cb red">Rood</option>
+					<option value="cb antraciet">Antraciet</option>
+				</field>
+				<field
+					name="cbDeny" 
+					type="text" 
+					default="Liever niet"
+					label="Annuleerknop tekst"
+					description="De tekst die verschijnt op de annuleerknop."
+				/>
+				<field
+					name="cbDenyColor"
+					type="list"
+					default="cb lightgray"
+					label="Annuleerknop kleur" 
+					description="De kleur van de annuleerknop op de website.">
+					<option value="cb lightgray">Lichtgrijs</option>
+					<option value="cb blue">Blauw</option>
+					<option value="cb bluegray">Blauwgrijs</option>
+					<option value="cb green">Groen</option>
+					<option value="cb orange">Lichtoranje</option>
+					<option value="cb red">Rood</option>
+					<option value="cb antraciet">Antraciet</option>
+				</field>
+				<field
+					name="cbRedirect"
+					type="radio"
+					default="no"
+					label="Redirect" 
+					description="Redirect naar andere pagina na keuze toestaan of weigeren? Bij keuze redirect:ja moet u hieronder een URL invullen waarnaar geredirect wordt.">
+					<option value="no">Nee</option>
+					<option value="yes">Ja</option>
+				</field>
+				<field
+					name="cbRedirectURL" 
+					type="text" 
+					default="/index.php"
+					label="Redirect URL"
+					description="De URL waar naar wordt geredirect nadat bezoeker keuze heeft gemaakt."
+				/>
+				<field
+					name="cbjQuery"
+					type="radio"
+					default="0"
+					label="jQuery laden" 
+					description="jQuery laden voor deze module">
+					<option value="0">Nee</option>
+					<option value="1">Ja</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
